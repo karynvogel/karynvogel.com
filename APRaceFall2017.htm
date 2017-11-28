@@ -8,7 +8,9 @@
       google.charts.setOnLoadCallback(drawBHSRaceChart);
       // Draw the pie chart for the comp race chart when Charts is loaded.
       google.charts.setOnLoadCallback(drawCompChart);
-      // Callback that draws the pie chart for Sarah's pizza.
+      //third chart
+      google.charts.setOnLoadCallback(drawIndividualsChart);
+      // Callback that draws the pie chart.
       function drawBHSRaceChart() {
         // Create the data table for Sarah's pizza.
         var data = new google.visualization.DataTable();
@@ -50,6 +52,28 @@
         var chart = new google.visualization.PieChart(document.getElementById('COMP_chart_div'));
         chart.draw(data, options);
       }
+      
+      // Callback that draws the pie chart for individuals.
+      function drawIndividualsChart() {
+        // Create the data table for comp.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Race');
+        data.addColumn('number', 'Students');
+        data.addRows([
+          ['WHT', 136],
+          ['AFA', 15],
+          ['ASI', 17],
+          ['LAT', 18],
+          ['MULT', 22]
+        ]);
+        // Set options for comp pie chart.
+        var options = {title:'Students taking one or more AP Class at BHS, Fall 2017, By Race',
+                       width:600,
+                       height:600};
+        // Instantiate and draw the chart for comp.
+        var chart = new google.visualization.PieChart(document.getElementById('IND_chart_div'));
+        chart.draw(data, options);
+      }
     </script>
   </head>
   <body>
@@ -58,6 +82,7 @@
       <tr>
         <td><div id="BHSAP_chart_div" style="border: 1px solid #ccc"></div></td>
         <td><div id="COMP_chart_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="IND_chart_div" style="border: 1px solid #ccc"></div></td>
       </tr>
     </table>
   </body>
