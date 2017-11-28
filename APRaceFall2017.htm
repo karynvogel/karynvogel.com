@@ -29,25 +29,25 @@
         var chart = new google.visualization.PieChart(document.getElementById('BHSAP_chart_div'));
         chart.draw(data, options);
       }
-      // Callback that draws the pie chart for Anthony's pizza.
-      function drawAnthonyChart() {
-        // Create the data table for Anthony's pizza.
+      // Callback that draws the pie chart for comp.
+      function drawCompChart() {
+        // Create the data table for comp.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Race');
+        data.addColumn('number', 'Students');
         data.addRows([
-          ['Mushrooms', 2],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
+          ['WHT', 589],
+          ['AFA', 144],
+          ['ASI', 136],
+          ['LAT', 20],
+          ['MULT', 46]
         ]);
-        // Set options for Anthony's pie chart.
-        var options = {title:'How Much Pizza Anthony Ate Last Night',
+        // Set options for comp pie chart.
+        var options = {title:'Race of all students at BHS, Fall 2017',
                        width:400,
                        height:300};
-        // Instantiate and draw the chart for Anthony's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+        // Instantiate and draw the chart for comp.
+        var chart = new google.visualization.PieChart(document.getElementById('COMP_chart_div'));
         chart.draw(data, options);
       }
     </script>
