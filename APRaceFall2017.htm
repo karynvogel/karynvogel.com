@@ -4,29 +4,29 @@
     <script type="text/javascript">
       // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-      // Draw the pie chart for Sarah's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawSarahChart);
-      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawAnthonyChart);
+      // Draw the pie chart for the BHS Race chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawBHSRaceChart);
+      // Draw the pie chart for the comp race chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawCompChart);
       // Callback that draws the pie chart for Sarah's pizza.
-      function drawSarahChart() {
+      function drawBHSRaceChart() {
         // Create the data table for Sarah's pizza.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Race');
+        data.addColumn('number', 'Students');
         data.addRows([
-          ['Mushrooms', 1],
-          ['Onions', 1],
-          ['Olives', 2],
-          ['Zucchini', 2],
-          ['Pepperoni', 1]
+          ['WHT', 287],
+          ['AFA', 15],
+          ['ASI', 17],
+          ['LAT', 18],
+          ['MULT', 22]
         ]);
-        // Set options for Sarah's pie chart.
-        var options = {title:'How Much Pizza Sarah Ate Last Night',
+        // Set options for BHS AP Race pie chart.
+        var options = {title:'Race of students taking AP Classes at BHS, Fall 2017',
                        width:400,
                        height:300};
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+        // Instantiate and draw the chart for BHS AP Race.
+        var chart = new google.visualization.PieChart(document.getElementById('BHSAP_chart_div'));
         chart.draw(data, options);
       }
       // Callback that draws the pie chart for Anthony's pizza.
@@ -56,8 +56,8 @@
     <!--Table and divs that hold the pie charts-->
     <table class="columns">
       <tr>
-        <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div></td>
-        <td><div id="Anthony_chart_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="BHSAP_chart_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="COMP_chart_div" style="border: 1px solid #ccc"></div></td>
       </tr>
     </table>
   </body>
