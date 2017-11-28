@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      // Load Charts and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+      // Draw the pie chart for the BHS Income chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawBHSIncomeChart);
+      // Draw the pie chart for the comp income chart when Charts is loaded.
+      google.charts.setOnLoadCallback(drawCompChart);
+      // Callback that draws the pie chart.
+      function drawBHSRaceChart() {
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Income');
+        data.addColumn('number', 'Students');
+        data.addRows([
+          ['WHT', 287],
+          ['AFA', 15],
+          ['ASI', 17],
+          ['LAT', 18],
+          ['MULT', 22]
+        ]);
+        // Set options for BHS AP Income pie chart.
+        var options = {title:'AP Enrollment at BHS, Fall 2017, By Income',
+                       width:600,
+                       height:600};
+        // Instantiate and draw the chart for BHS AP Income.
+        var chart = new google.visualization.PieChart(document.getElementById('BHSAP_chart_div'));
+        chart.draw(data, options);
+      }
+      // Callback that draws the pie chart for comp.
+      function drawCompChart() {
+        // Create the data table for comp.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Income');
+        data.addColumn('number', 'Students');
+        data.addRows([
+          ['WHT', 589],
+          ['AFA', 144],
+          ['ASI', 136],
+          ['LAT', 20],
+          ['MULT', 46]
+        ]);
+        // Set options for comp pie chart.
+        var options = {title:'Total Enrollment at BHS, Fall 2017, By Income',
+                       width:600,
+                       height:600};
+        // Instantiate and draw the chart for comp.
+        var chart = new google.visualization.PieChart(document.getElementById('COMP_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <!--Table and divs that hold the pie charts-->
+    <table class="columns">
+      <tr>
+        <td><div id="BHSAP_chart_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="COMP_chart_div" style="border: 1px solid #ccc"></div></td>
+      </tr>
+    </table>
+  </body>
+</html>
